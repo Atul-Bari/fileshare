@@ -73,7 +73,10 @@ func (manager *ClientManager) send(client *Client) {
             if !ok {
                 return
             }
-            client.socket.Write(message)
+	    fmt.Println(message)
+	    //temp := map[string]interface{}{"mtype":"CONNECTED"}
+	    client.socket.Write([]byte("mtype:CONNECTED"))
+            //client.socket.Write(message)
         }
     }
 }
